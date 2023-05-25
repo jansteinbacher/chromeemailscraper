@@ -19,10 +19,13 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         // Display Emails
         emails.forEach(email => {
             let li = document.createElement('li');
-            li.innerText = email;
+            let a = document.createElement('a');
+            a.href = 'mailto:' + email;
+            a.innerText = email;
+            li.appendChild(a);
             list.appendChild(li);
-            
-        });
+          });
+          
     }
 
 })
